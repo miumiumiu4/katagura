@@ -87,6 +87,7 @@
     <textarea id="wish" name="wish" placeholder="例：SNSを続けられない／紹介が増えない／広告の反応が悪い など。当日の型づくりの参考にします。"></textarea>
 
     <button type="submit" id="submitBtn">申し込む</button>
+    <div class="note">「申し込む」を押すとメールアプリが開きます。そのまま送信すると申込が完了します。</div>
     <div class="err" id="errMsg">送信できませんでした。お手数ですが、時間をおいてもう一度お試しください。</div>
   </form>
 
@@ -120,8 +121,22 @@ document.getElementById('applyForm').addEventListener('submit', async (e) => {
     submitted_at: new Date().toISOString()
   };
   if (!FORM_ENDPOINT) {
-    err.textContent = 'ただいま受付準備中です。もうしばらくお待ちください。';
-    err.style.display = 'block';
+    // 受け口（Apps Script）接続までの間は、メールで申し込みを受け付けます
+    const subject = '【型蔵申込】' + data.name + ' 様（' + data.method + '）';
+    const body = [
+      '型蔵（かたぐら）in 大阪 参加申込',
+      '',
+      'お名前：' + data.name,
+      'メールアドレス：' + data.email,
+      '電話番号：' + (data.tel || '（未記入）'),
+      '屋号・会社名：' + (data.shop || '（未記入）'),
+      '参加方法：' + data.method,
+      'アフター（シーシャ）：' + data.shisha,
+      '集客の困りごと・ほしい型：' + (data.wish || '（未記入）')
+    ].join('\n');
+    location.href = 'mailto:info@arigatouosouji.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    btn.disabled = false;
+    btn.textContent = '申し込む';
     return;
   }
   btn.disabled = true;
