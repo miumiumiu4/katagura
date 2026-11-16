@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>型蔵（かたぐら）in 大阪｜参加申込フォーム</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif; background: #faf6ef; color: #333; line-height: 1.7; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 24px 16px 48px; }
+  header { text-align: center; padding: 24px 8px 8px; }
+  header .kicker { color: #b8860b; font-weight: bold; letter-spacing: .2em; font-size: 13px; }
+  header h1 { font-size: 30px; margin: 8px 0 4px; }
+  header .sub { color: #666; font-size: 14px; }
+  .card { background: #fff; border-radius: 12px; padding: 20px; margin-top: 16px; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+  .card h2 { font-size: 17px; margin: 0 0 12px; border-left: 4px solid #b8860b; padding-left: 8px; }
+  .event p { margin: 4px 0; }
+  .free { color: #c0392b; font-weight: bold; }
+  label { display: block; font-weight: bold; margin: 16px 0 6px; font-size: 15px; }
+  label .req { color: #fff; background: #c0392b; font-size: 11px; border-radius: 4px; padding: 2px 6px; margin-left: 6px; vertical-align: middle; }
+  label .opt { color: #888; font-size: 12px; margin-left: 6px; }
+  input[type="text"], input[type="email"], input[type="tel"], textarea {
+    width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; background: #fff;
+  }
+  textarea { min-height: 96px; resize: vertical; }
+  .radio { display: flex; gap: 12px; flex-wrap: wrap; }
+  .radio label { font-weight: normal; margin: 0; border: 1px solid #ccc; border-radius: 8px; padding: 10px 14px; cursor: pointer; }
+  .radio input { margin-right: 6px; }
+  .note { font-size: 13px; color: #666; margin-top: 6px; }
+  button { width: 100%; margin-top: 24px; padding: 16px; font-size: 18px; font-weight: bold; color: #fff; background: #b8860b; border: none; border-radius: 10px; cursor: pointer; }
+  button:disabled { background: #ccc; }
+  .done { text-align: center; padding: 32px 16px; }
+  .done .big { font-size: 22px; font-weight: bold; margin-bottom: 8px; }
+  .err { color: #c0392b; font-size: 14px; margin-top: 12px; display: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">超知能の型が貯まる場所</div>
+    <h1>型蔵（かたぐら） in 大阪</h1>
+    <div class="sub">仕事の「型」が貯まっていく蔵。開けるたびに、仕事が速くなる。</div>
+  </header>
+
+  <div class="card event">
+    <h2>開催概要</h2>
+    <p>📅 2026年12月3日（木）10:00〜14:00</p>
+    <p>📍 大阪市内（会場は決まり次第、申込の方へご案内します）＋ Zoom参加もできます</p>
+    <p>💰 参加費：<span class="free">無料</span>（参加特典あり）</p>
+    <p>💻 現地参加の方はPCをご持参ください</p>
+    <p>🍙 休憩は5分休憩を数回取るくらいです。食べ物は持参でお願いします</p>
+    <p>💨 終了後はアフターでシーシャへ行きます（現地参加の方のみ・参加費5,000円）</p>
+    <p>第1回のテーマは「集客」。超知能（MUSE）の使い方を全部出して、集客に繋がる型をその場で作って持ち帰る日です。作った型は、そのまま使ってOKです。</p>
+  </div>
+
+  <form class="card" id="applyForm">
+    <h2>参加申込</h2>
+
+    <label for="name">お名前 <span class="req">必須</span></label>
+    <input type="text" id="name" name="name" required autocomplete="name" placeholder="例：山田 太郎">
+
+    <label for="email">メールアドレス <span class="req">必須</span></label>
+    <input type="email" id="email" name="email" required autocomplete="email" placeholder="例：taro@example.jp">
+    <div class="note">当日のご案内と参加特典は、こちらのアドレスへお送りします。</div>
+
+    <label for="tel">電話番号 <span class="opt">任意</span></label>
+    <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="例：090-0000-0000">
+
+    <label for="shop">屋号・会社名 <span class="opt">任意</span></label>
+    <input type="text" id="shop" name="shop" placeholder="例：◯◯クリーニング">
+
+    <label>参加方法 <span class="req">必須</span></label>
+    <div class="radio">
+      <label><input type="radio" name="method" value="大阪会場（現地）" required>大阪会場（現地）</label>
+      <label><input type="radio" name="method" value="Zoom">Zoom</label>
+    </div>
+
+    <label>アフター（シーシャ）に参加しますか <span class="req">必須</span></label>
+    <div class="radio">
+      <label><input type="radio" name="shisha" value="参加する" required>参加する（参加費5,000円）</label>
+      <label><input type="radio" name="shisha" value="参加しない">参加しない</label>
+    </div>
+    <div class="note">現地参加の方のみ。参加費は当日お支払いください。</div>
+
+    <label for="wish">集客で今いちばん困っていること・当日ほしい型 <span class="opt">任意</span></label>
+    <textarea id="wish" name="wish" placeholder="例：SNSを続けられない／紹介が増えない／広告の反応が悪い など。当日の型づくりの参考にします。"></textarea>
+
+    <button type="submit" id="submitBtn">申し込む</button>
+    <div class="err" id="errMsg">送信できませんでした。お手数ですが、時間をおいてもう一度お試しください。</div>
+  </form>
+
+  <div class="card done" id="doneCard" style="display:none">
+    <div class="big">お申し込みありがとうございます！</div>
+    <p>受付が完了しました。当日のご案内は、ご入力のメールアドレスへお送りします。<br>12月3日、大阪でお会いしましょう。</p>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// 受付先（Apps Script の URL）をここに入れると送信が有効になります。
+// 予約フォームと同じ方式（JSON を POST）です。空の間は送信されません。
+const FORM_ENDPOINT = "";
+// ============================================================
+
+document.getElementById('applyForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const err = document.getElementById('errMsg');
+  const data = {
+    type: 'katagura_apply',
+    event: '型蔵 in 大阪 2026-12-03',
+    name: document.getElementById('name').value.trim(),
+    email: document.getElementById('email').value.trim(),
+    tel: document.getElementById('tel').value.trim(),
+    shop: document.getElementById('shop').value.trim(),
+    method: (document.querySelector('input[name="method"]:checked') || {}).value || '',
+    shisha: (document.querySelector('input[name="shisha"]:checked') || {}).value || '',
+    wish: document.getElementById('wish').value.trim(),
+    submitted_at: new Date().toISOString()
+  };
+  if (!FORM_ENDPOINT) {
+    err.textContent = 'ただいま受付準備中です。もうしばらくお待ちください。';
+    err.style.display = 'block';
+    return;
+  }
+  btn.disabled = true;
+  btn.textContent = '送信中…';
+  try {
+    await fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(data)
+    });
+    document.getElementById('applyForm').style.display = 'none';
+    document.getElementById('doneCard').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch (ex) {
+    err.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '申し込む';
+  }
+});
+</script>
+</body>
+</html>
