@@ -1,0 +1,20 @@
+BEGIN:VCARD
+VERSION:3.0
+N:三浦;公嗣;;;
+FN:三浦 公嗣
+X-PHONETIC-LAST-NAME:みうら
+X-PHONETIC-FIRST-NAME:さとし
+ORG:エイムポイント合同会社
+TITLE:代表社員
+TEL;TYPE=CELL:070-8517-9292
+item1.TEL:080-4177-2272
+item1.X-ABLabel:秘書（湊）
+EMAIL;TYPE=WORK:miura@aimpoint.co.jp
+item2.EMAIL:info@arigatouosouji.com
+item2.X-ABLabel:エアコン掃除の窓口
+ADR;TYPE=WORK:;;北幸1-11-1 水信ビル7階;横浜市西区;神奈川県;220-0004;日本
+URL:https://aimpoint.co.jp/
+item3.URL:https://miumiumiu4.github.io/katagura/meishi.html
+item3.X-ABLabel:デジタル名刺
+NOTE:ありがとうクリーニング株式会社 代表取締役／ありがとうグループ
+END:VCARD

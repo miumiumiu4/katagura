@@ -22,6 +22,7 @@
   .btn.sub { background: #26334f; color: #f2f2f2; border: 1px solid #46587a; }
   .links { margin-top: 26px; }
   .links h2 { font-size: 14px; color: #aab4c8; text-align: center; margin: 0 0 10px; letter-spacing: .15em; }
+  .hint { font-size: 12px; color: #aab4c8; margin-top: 8px; text-align: left; }
   .foot { text-align: center; color: #7787a3; font-size: 12px; margin-top: 28px; }
 </style>
 </head>
@@ -46,7 +47,8 @@
       <p>📍 エイムポイント合同会社 本店：〒220-0004 神奈川県横浜市西区北幸1-11-1 水信ビル7階</p>
     </div>
 
-    <button class="btn" id="vcardBtn">📇 連絡先に追加する</button>
+    <a class="btn" href="miura-satoshi.vcf">📇 連絡先に追加する</a>
+    <div class="hint">LINEなどのアプリ内で開いて追加できないときは、右上のメニューから「Safari／ブラウザで開く」を選んでから押してください。</div>
   </div>
 
   <div class="links">
@@ -60,31 +62,5 @@
   <div class="foot">このページが三浦 公嗣のデジタル名刺です</div>
 </div>
 
-<script>
-document.getElementById('vcardBtn').addEventListener('click', () => {
-  const vcf = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'N:三浦;公嗣;;;',
-    'FN:三浦 公嗣',
-    'ORG:エイムポイント合同会社',
-    'TITLE:代表社員（エイムポイント合同会社）／代表取締役（ありがとうクリーニング株式会社）',
-    'TEL;TYPE=CELL:070-8517-9292',
-    'TEL;TYPE=WORK:080-4177-2272',
-    'EMAIL;TYPE=WORK:miura@aimpoint.co.jp',
-    'EMAIL:info@arigatouosouji.com',
-    'ADR:;;高輪2丁目21番40号 国際高輪ビル5階;港区;東京都;108-0074;日本',
-    'URL:https://aimpoint.co.jp/',
-    'URL:https://miumiumiu4.github.io/katagura/meishi.html',
-    'END:VCARD'
-  ].join('\r\n');
-  const blob = new Blob([vcf], { type: 'text/vcard;charset=utf-8' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'miura-satoshi.vcf';
-  a.click();
-  URL.revokeObjectURL(a.href);
-});
-</script>
 </body>
 </html>
